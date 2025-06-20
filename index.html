@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEEABLE - Startup</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="contacto.css" />
+    <link rel="stylesheet" href="registro.css" />
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <a href="#" onclick="mostrarSeccion('inicio')">
+          <img src="Imagenes/logotipo.png" alt="UNILAB Logo" class="logotipo" />
+        </a>
+        <h1>SEEABLE</h1>
+      </div>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <nav>
+        <ul>
+          <li>
+            <a href="#" onclick="mostrarSeccion('inicio'); closeMenu()"
+              >Inicio</a
+            >
+            <ul>
+              <li>
+                <a href="#" onclick="mostrarSeccion('historia'); closeMenu()"
+                  >Nosotros</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="mostrarSeccion('proposito'); closeMenu()"
+                  >Misión y Visión</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" onclick="mostrarSeccion('asistente'); closeMenu()"
+              >Asistente</a
+            >
+          </li>
+          <li>
+            <a href="#" onclick="mostrarSeccion('acerca'); closeMenu()"
+              >SeeAble</a
+            >
+            <ul>
+              <li>
+                <a href="#" onclick="mostrarSeccion('contacto'); closeMenu()"
+                  >Contacto</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="mostrarSeccion('foro'); closeMenu()"
+                  >Foro</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" onclick="mostrarSeccion('ayuda'); closeMenu()">Ayuda</a>
+          </li>
+          <li id="nav-login">
+            <a href="#" onclick="mostrarSeccion('login'); closeMenu()"
+              >Iniciar Sesión</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="user-panel" id="userPanel">
+        <img src="Imagenes/usuario.png" alt="User" />
+        <span id="userName" onclick="toggleDropdown()">Usuario</span>
+        <div class="user-dropdown" id="userDropdown">
+          <button onclick="cerrarSesion()">Cerrar Sesión</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="inicio" class="seccion custom-inicio" style="display: flex">
+        <h2>¡Bienvenido a SEEABLE!</h2>
+        <div class="inicio-contenido">
+          <div class="bienvenida-texto">
+            <p>
+              Garantizamos la accesibilidad y la orientación autónoma en
+              espacios interiores para personas con baja visión, proporcionando
+              datos y herramientas tecnológicas eficaces que promuevan una
+              sociedad más inclusiva, segura y equitativa para todos los
+              peruanos.
+            </p>
+          </div>
+          <div class="mapa-imagen">
+            <img
+              src="Imagenes/mapa.png"
+              alt="Inicio SeeAble"
+              class="ImagenInicio"
+            />
+          </div>
+        </div>
+        <div class="user-panel">Usuario</div>
+        <h2>¿Qué está buscando?</h2>
+        <!--<input
+          type="text"
+          class="search-bar"
+          placeholder="¿Qué está buscando?"
+        />-->
+        <div class="icon-grid">
+          <div class="icon-item" onclick="mostrarSeccion('login')">
+            <img src="Inicio/Opcion1.png" alt="Iniciar Sesión" />
+            <p>Iniciar Sesión</p>
+          </div>
+          <div class="icon-item" onclick="mostrarSeccion('asistente')">
+            <img src="Inicio/Opcion2.png" alt="Asistente" />
+            <p>Asistente</p>
+          </div>
+          <div class="icon-item" onclick="mostrarSeccion('ayuda')">
+            <img src="Inicio/Opcion3.png" alt="Ayuda" />
+            <p>Ayuda</p>
+          </div>
+          <div class="icon-item" onclick="mostrarSeccion('historia')">
+            <img src="Inicio/Opcion4.png" alt="Nosotros" />
+            <p>Nosotros</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: ¿QUIÉNES SOMOS? -->
+      <section id="historia" class="formulario seccion">
+        <h2>¿Quiénes Somos?</h2>
+        <br />
+        <div class="historia-contenido">
+          <div class="historia-imagen">
+            <img
+              src="Imagenes/HearSee.png"
+              alt="Logo de HearSee representando aprendizaje e innovación"
+            />
+          </div>
+          <div class="historia-texto">
+            <p>
+              Somos HearSee, un startup formado por estudiantes de la
+              Universidad Peruana de Ciencias Aplicadas (UPC), cuyo objetivo es
+              desarrollar la app SeeAble: un asistente de movilidad inclusivo y
+              tecnológico.
+            </p>
+            <p>
+              Nuestro equipo está comprometido con crear soluciones accesibles
+              que promuevan la autonomía y la inclusión de las personas con
+              discapacidad visual, combinando navegación guiada por voz,
+              reconocimiento visual y soporte humano.
+            </p>
+            <p>
+              En HearSee, creemos que la tecnología debe ser un puente, no una
+              barrera. Por ello, trabajamos desde la empatía, la innovación y el
+              compromiso social.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: MISIÓN Y VISIÓN -->
+      <section id="proposito" class="formulario seccion">
+        <h2>Misión y Visión</h2>
+        <br />
+        <br />
+        <div class="proposito-contenido">
+          <div class="proposito-imagen">
+            <img
+              src="Inicio/valores.png"
+              alt="Imagen representativa de misión y visión"
+            />
+          </div>
+          <div class="proposito-texto">
+            <h3>Misión</h3>
+            <br />
+            <p>
+              Empoderar a personas con discapacidad visual mediante herramientas
+              tecnológicas inclusivas que promuevan su autonomía, movilidad y
+              calidad de vida dentro de espacios cerrados como centros
+              educativos, hospitales o centros comerciales.
+            </p>
+            <br />
+            <br />
+            <h3>Visión</h3>
+            <br />
+            <p>
+              Convertirnos en referentes en soluciones de movilidad accesible,
+              liderando el cambio hacia un entorno más inclusivo y conectado
+              para todos. Queremos redefinir la accesibilidad con innovación,
+              impacto social y experiencia de usuario centrada en la empatía.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: ACERCA DE SEEABLE -->
+      <section id="acerca" class="formulario seccion">
+        <div class="acerca-contenido">
+          <div class="acerca-texto">
+            <h3>SeeAble</h3>
+            <p>
+              SeeAble es nuestra app estrella. Un asistente móvil que utiliza
+              navegación interior, inteligencia artificial y comandos de voz
+              para guiar a personas con baja visión dentro de espacios públicos
+              complejos.
+            </p>
+            <p>
+              Con funcionalidades como rutas guiadas, alertas de obstáculos y
+              reconocimiento visual, SeeAble transforma cualquier espacio en un
+              entorno accesible.
+            </p>
+            <br />
+            <br />
+            <h3>Nuestro Público</h3>
+            <p>
+              Nos enfocamos en personas con baja visión, especialmente adultos
+              entre 40 y 65 años que requieren apoyo adicional para desplazarse
+              de forma segura. SeeAble está diseñada para brindar independencia
+              y confianza, en cualquier lugar y momento.
+            </p>
+          </div>
+          <div class="video-ayuda">
+            <h4>Video relacionado</h4>
+            <iframe
+              src="https://www.youtube.com/embed/z8RVC7VmY8k"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <br />
+          <br />
+          <div class="registro-formulario">
+            <h2>Publicar</h2>
+            <form id="notaForm">
+              <label for="usuario">Usuario:</label>
+              <input type="text" id="user" />
+              <!--<required />-->
+
+              <label for="nombres">Nombres:</label>
+              <input type="text" id="name" />
+              <!--<required />-->
+
+              <label for="apellidos">Apellidos:</label>
+              <input type="text" id="lastname" />
+              <!--<required />-->
+
+              <label for="pais">País:</label>
+              <select id="country">
+                <!--<required />-->
+                <option value="ninguno">Seleccione una opción</option>
+                <option value="Peru">Perú</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Chile">Chile</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Venezuela">Venezuela</option>
+                <option value="Mexico">México</option>
+                <option value="España">España</option>
+                <option value="Salvador">El Salvador</option>
+                <option value="Costa Rica">Costa Rica</option>
+              </select>
+
+              <label for="tipo">Tipo de comentario:</label>
+              <select id="tcoment">
+                <!--<required />-->
+                <option value="">Seleccione una ubicación</option>
+                <option value="Muy bueno">Muy Bueno</option>
+                <option value="Bueno">Bueno</option>
+                <option value="Regular">Regular</option>
+                <option value="Malo">Malo</option>
+                <option value="Muy malo">Muy Malo</option>
+              </select>
+
+              <label for="nota">Valoración (0 - 5):</label>
+              <input type="number" id="note" min="0" max="5" />
+              <!--<required />-->
+
+              <label for="comentario">Comentario:</label>
+              <input type="text" id="coment" />
+              <!--<required />-->
+
+              <button type="submit">Registrar</button>
+            </form>
+          </div>
+      </section>
+
+      <section id="contacto" class="formulario seccion">
+        <h2>Contáctanos</h2>
+        <br />
+        <div class="contacto-contenido">
+          <!-- FORMULARIO -->
+          <form class="formulario-contacto" id="formularioContacto" name="frm">
+            <div class="form-grupo">
+              <label for="nombres">Nombres:</label>
+              <input type="text" id="nombres" name="nombres" />
+              <!--required-->
+            </div>
+
+            <div class="form-grupo">
+              <label for="apellidos">Apellidos:</label>
+              <input type="text" id="apellidos" name="apellidos" />
+              <!--required-->
+            </div>
+
+            <div class="form-grupo">
+              <label for="tipo">Sexo:</label>
+              <select id="tipo" name="sexo">
+                <option value="ninguno">Ninguno</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+              </select>
+            </div>
+
+            <div class="form-grupo">
+              <label for="tipoDoc">Tipo de Documento:</label>
+              <select id="tipoDoc" name="tipoDoc">
+                <option value="dni">DNI</option>
+                <option value="pasaporte">Pasaporte</option>
+                <option value="carnet">Carnet de Extranjería</option>
+              </select>
+            </div>
+            <div class="form-grupo">
+              <label for="telefono">Teléfono:</label>
+              <input type="tel" id="telefono" name="telefono" />
+              <!--required-->
+            </div>
+
+            <div class="form-grupo">
+              <label for="pais">País:</label>
+              <select id="pais" name="pais">
+                <option value="ninguno">Seleccione una opción</option>
+                <option value="Peru">Perú</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Chile">Chile</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Venezuela">Venezuela</option>
+                <option value="Mexico">México</option>
+                <option value="España">España</option>
+                <option value="Salvador">El Salvador</option>
+                <option value="Costa Rica">Costa Rica</option>
+              </select>
+            </div>
+
+            <div class="form-grupo">
+              <label for="email">Correo electrónico:</label>
+              <input type="text" id="email" name="email" />
+              <!--required-->
+            </div>
+
+            <div class="form-grupo">
+              <label for="asunto">Asunto:</label>
+              <textarea id="asunto" name="asunto" rows="3"></textarea>
+            </div>
+
+            <div class="form-grupo">
+              <label>Preferencias de contacto:</label>
+              <div class="checkboxes">
+                <label
+                  ><input type="checkbox" name="preferencia" value="correo" />
+                  Correo</label
+                >
+                <label
+                  ><input type="checkbox" name="preferencia" value="telefono" />
+                  Teléfono</label
+                >
+                <label
+                  ><input type="checkbox" name="preferencia" value="celular" />
+                  Celular</label
+                >
+              </div>
+            </div>
+
+            <div class="form-grupo">
+              <label>¿Tienes baja visión?</label>
+              <div class="radios">
+                <label
+                  ><input type="radio" name="estudiante" value="si" /> Sí</label
+                >
+                <label
+                  ><input type="radio" name="estudiante" value="no" /> No</label
+                >
+              </div>
+            </div>
+
+            <button type="submit">Enviar</button>
+          </form>
+
+          <!-- TEXTO A LA DERECHA -->
+          <div class="contacto-instrucciones">
+            <p>
+              Completa el formulario con tus datos. Nuestro equipo se pondrá en
+              contacto contigo según la información proporcionada.
+            </p>
+            <br />
+            <p>
+              Recuerda usar un correo válido y seleccionar tu tipo de documento
+              correctamente. Si eres estudiante, indícalo para acceder a
+              beneficios exclusivos.
+            </p>
+            <br />
+            <div class="video-contacto">
+              <p><strong> Video relacionado</strong></p>
+              <br />
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/z8RVC7VmY8k"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <br />
+            <div
+              id="mensajeEnviado"
+              class="mensaje-enviado"
+              style="display: none"
+            >
+              Mensaje enviado correctamente.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="foro" class="formulario seccion">
+        <h3>Foro</h3>
+        <br />
+        <h4>Filtros</h4>
+        <div class="filtro">
+          <label>Filtrar por ubicación (país):</label>
+          <input type="text" placeholder="Ej: Perú, España" />
+          <br />
+          <label>Valoración:</label>
+          <select>
+            <option value="">Todos</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <br />
+          <label>Tipo de comentario:</label>
+          <select>
+            <option value="">Todos</option>
+            <option value="1">Malo</option>
+            <option value="2">Regular</option>
+            <option value="3">Bueno</option>
+          </select>
+        </div>
+
+        <div class="alquiler-card">
+          <p><strong>Usuario:</strong> Juan Pérez</p>
+          <p><strong>Ubicación:</strong> España</p>
+          <p><strong>Tipo de comentario:</strong> Bueno</p>
+          <p><strong>Valoración:</strong> 4 / 5</p>
+          <p><strong>Comentario:</strong> Muy buena app</p>
+        </div>
+
+        <div class="alquiler-card">
+          <p><strong>Usuario:</strong> María Rodríguez</p>
+          <p><strong>Ubicación:</strong> Argentina</p>
+          <p><strong>Tipo de comentario:</strong> Regular</p>
+          <p><strong>Valoración:</strong> 3 / 5</p>
+          <p><strong>Comentario</strong> No esta mal</p>
+        </div>
+
+        <div class="alquiler-card">
+          <p><strong>Usuario:</strong> Dafne Alarcon</p>
+          <p><strong>Ubicación:</strong> Perú</p>
+          <p><strong>Tipo de comentario:</strong> Bueno</p>
+          <p><strong>Valoración:</strong> 4 / 5</p>
+          <p><strong>Comentario:</strong> Lo amé</p>
+        </div>
+        <!-- Lista visual de estudiantes -->
+        <div class="registro-visual">
+          <h2>Mis Publicaciones</h2>
+          <ul id="listaEstudiantes"></ul>
+        </div>
+      </section>
+
+      <section id="asistente" class="formulario seccion">
+        <div class="asistente-contenido">
+          <div class="asistente-texto">
+            <h3>Asistente</h3>
+            <br />
+            <p>¡Activa tu cámara para una mejor experiencia!</p>
+            <br />
+            <label>Desde:</label>
+            <select>
+              <option value="">Mi ubicación actual</option>
+            </select>
+            <br />
+            <br />
+            <label>Hasta:</label>
+            <select>
+              <option value="">Ninguno</option>
+              <option value="">Estacionamiento</option>
+              <option value="">Puerta de ingreso</option>
+              <option value="">Puerta de salida</option>
+            </select>
+            <br />
+            <br />
+            <label>Ubicación:</label>
+            <select>
+              <option value="">Ninguno</option>
+              <option value="1">Restaurante KFC - Lima, San Miguel </option>
+              <option value="2">UPC - Lima, San Miguel</option>
+              <option value="3">Hospital San José - Lima, Callao</option>
+            </select>
+          </div>
+          <br />
+          <br />
+          <div class="ubicacion-imagen">
+            <img
+              src="Asistente/mapa-hospital.png"
+              alt="Mapa de la ubicación actual"
+            />
+          </div>
+          <div class="botones-asistente">
+            <button onclick="mostrarSeccion('asistente')">Mapa</button>
+            <button onclick="mostrarSeccion('camara')">Cámara</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="camara" style="display: none">
+        <div class="camara-contenido">
+          <div class="camara-texto">
+            <h3>Asistente</h3>
+            <br />
+            <p>¡Recuerda que puedes visualizar el mapa!</p>
+          </div>
+          <br />
+          <label>Desde:</label>
+          <select>
+            <option value="">Mi ubicación actual</option>
+          </select>
+          <br />
+          <br />
+          <label>Hasta:</label>
+          <select>
+            <option value="">Ninguno</option>
+            <option value="">Estacionamiento</option>
+            <option value="">Puerta de ingreso</option>
+            <option value="">Puerta de salida</option>
+          </select>
+          <br />
+          <br />
+          <label>Ubicación:</label>
+          <select>
+            <option value="">Ninguno</option>
+            <option value="1">Restaurante KFC - Lima, San Miguel </option>
+            <option value="2">UPC - Lima, San Miguel</option>
+            <option value="3">Hospital San José - Lima, Callao</option>
+          </select>
+          <br />
+          <br />
+          <div class="botones-asistente">
+            <button onclick="encenderCamara()">Encender</button>
+            <button onclick="apagarCamara()">Apagar</button>
+          </div>
+          <div class="camara-imagen">
+            <video
+              id="video"
+              autoplay
+              playsinline
+              style="width: 100%; border-radius: 10px"
+              alt="Camara apagada"
+            ></video>
+          </div>
+          <div class="botones-asistente">
+            <button onclick="mostrarSeccion('asistente')">Mapa</button>
+            <button onclick="mostrarSeccion('camara')">Cámara</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="seeable" class="formulario seccion">
+        <h3>SeeAble</h3>
+        <p>Información general sobre nuestras instituciones asociadas.</p>
+      </section>
+
+      <section id="ayuda" class="formulario seccion">
+        <div class="ayuda-contenido">
+          <div class="ayuda-texto">
+            <h3>Centro de Ayuda</h3>
+            <p>
+              ¿Tienes problemas navegando en la plataforma? Estamos aquí para
+              ayudarte.
+            </p>
+
+            <h4>Preguntas Frecuentes</h4>
+            <ul>
+              <li>¿Cómo inicio sesión en mi cuenta?</li>
+              <p>Ingresa con tu usuario y/o correo electrónico,
+                si no tienes una cuenta puedes registrarte
+                con un nombre de usuario o vincularlo a
+                tu correo de preferencia, además de eso,
+                crearas una contraseña para la seguridad
+                de esta misma.</p>
+              </br>
+              <li>¿Cómo funciona el asistente SeeAble?</li>
+              <p> Dependiendo en la ubicación que te encuentres
+                , el asistente de voz te guiara hacia tu punto de
+                destino, avisandote sobre obstaculos y/o
+               señalizaciones dentro de espacios públicos
+               cerrados
+              </p>
+              </br>
+              <li>¿Puedo contactar al soporte técnico directamente?</li>
+              <p>Si, tenemos un canal de WhatsApp 
+                dedicado para atender las consultas
+                y/o quejas de los usuarios.
+                Escribenos al número +51 972 297 431</p>
+              </br>
+            </ul>
+
+            <h4>Contáctanos</h4>
+            <p><strong>Correo:</strong> soporte@seeable.com</p>
+            <p><strong>Teléfono:</strong> +51 972 297 431</p>
+            <p>
+              <strong>Horario:</strong> Lunes a Viernes, 9:00 a.m. - 6:00 p.m.
+            </p>
+          </div>
+
+          <div class="video-ayuda">
+            <h4>Video relacionado</h4>
+            <iframe
+              src="https://www.youtube.com/embed/z8RVC7VmY8k"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section id="login" class="formulario seccion">
+        <h3>Iniciar Sesión</h3>
+        <div class="login-box">
+          <input type="text" id="usuarioInput" placeholder="Usuario" />
+          <div class="campo-password">
+            <input type="password" id="password" placeholder="Contraseña" />
+            <button type="button" onclick="togglePassword()">👁️</button>
+          </div>
+          <button onclick="procesarLogin()">Iniciar sesión</button>
+          <p style="margin-top: 10px; font-size: 14px">
+            ¿No tienes una cuenta?
+            <a href="#" onclick="mostrarSeccion('registro')">Regístrate aquí</a>
+          </p>
+        </div>
+      </section>
+
+      <section id="registro" class="formulario seccion">
+        <h2>Registrarse</h2>
+        <div class="login-box">
+          <input type="text" id="usuarioInput" placeholder="Usuario" />
+          <input type="password" placeholder="Contraseña" />
+          <button onclick="procesarLogin()">Registrar</button>
+          <!--<button class="google-btn">Vincular con Google</button>-->
+          <button class="back-button" onclick="mostrarSeccion('login')">
+            Volver
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer class="footer-desktop">
+      <div class="footer-left">
+        © 2025 SeeAble. Todos los derechos reservados.
+      </div>
+      <div class="footer-right">
+        <a href="https://www.upc.edu.pe/terminos-de-uso/" target="_blank"
+          >Términos de servicio</a
+        >
+        <a href="https://www.facebook.com/UPCPeru/" target="_blank">
+          <img
+            src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+            alt="Facebook"
+          />
+        </a>
+        <a href="https://www.instagram.com/upc_peru/" target="_blank">
+          <img
+            src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png"
+            alt="Instagram"
+          />
+        </a>
+        <a href="https://www.youtube.com/user/CanalUPCTV" target="_blank">
+          <img
+            src="https://cdn-icons-png.flaticon.com/24/1384/1384060.png"
+            alt="YouTube"
+          />
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+.registro-notas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: #f4f7fb;
+  padding: 2rem 1rem;
+}
+
+/* Formulario */
+.registro-formulario {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.registro-formulario h2 {
+  margin-bottom: 1rem;
+}
+
+.registro-formulario label {
+  display: block;
+  margin-top: 1rem;
+}
+
+.registro-formulario input,
+.registro-formulario select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.registro-formulario button {
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  width: 100%;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.registro-formulario button:hover {
+  background-color: var(--primary-color);
+}
+
+/* Visualización */
+.registro-visual {
+  flex: 1;
+  background-color: #e9f0fa;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.registro-visual h2 {
+  margin-bottom: 1rem;
+}
+
+.registro-visual ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Barra de progreso visual */
+.barra-progreso {
+  position: relative;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem 1rem;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+.progreso {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--primary-color);
+  opacity: 0.2;
+  border-radius: 8px 0 0 8px;
+  z-index: 1;
+}
+
+.barra-progreso span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .registro-notas {
+    flex-direction: column;
+  }
+}

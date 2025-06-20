@@ -1,0 +1,125 @@
+.contacto {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.contacto h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #222;
+  font-family: "Alex Brush", cursive;
+}
+
+.contacto-contenido {
+  display: flex; /* Muestra el formulario y el texto lado a lado */
+  flex-direction: row;
+  gap: 3rem;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.formulario-contacto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+input,
+select,
+textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.checkboxes label,
+.radios label {
+  margin-right: 1rem;
+}
+
+button[type="submit"] {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
+
+.contacto-instrucciones {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.mensaje-enviado {
+  margin-top: 1.5rem;
+  color: green;
+  font-weight: bold;
+}
+
+.video-contacto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-contacto iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+}
+
+/* RESPONSIVE PARA MÓVILES */
+@media (max-width: 768px) {
+  .contacto-contenido {
+    flex-direction: column;
+  }
+
+  .formulario-contacto,
+  .contacto-instrucciones {
+    width: 100%;
+  }
+
+  .mensaje-enviado {
+    text-align: center;
+  }
+
+  .video-ayuda iframe {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .video-contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .video-contacto iframe {
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}
